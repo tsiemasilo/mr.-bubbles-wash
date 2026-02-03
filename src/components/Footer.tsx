@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { MapPin, Phone, Clock, Facebook, Instagram, MessageCircle } from "lucide-react";
+import { MapPin, Phone, Clock } from "lucide-react";
+import { SiFacebook, SiInstagram, SiWhatsapp, SiTiktok } from "react-icons/si";
 
 const Footer = () => {
   return (
@@ -45,7 +46,7 @@ const Footer = () => {
             transition={{ duration: 0.2 }}
           >
             <Phone className="w-4 h-4 text-primary" />
-            <span className="text-sm text-secondary-foreground/80">+27 12 345 6789</span>
+            <span className="text-sm text-secondary-foreground/80">082 806 9569</span>
           </motion.div>
         </div>
 
@@ -53,27 +54,39 @@ const Footer = () => {
         <div className="flex justify-center gap-4 mb-8">
           <motion.a 
             href="#" 
-            className="p-3 bg-secondary-foreground/10 rounded-full hover:bg-primary/20 transition-colors"
+            className="p-3 bg-secondary-foreground/10 rounded-full hover:bg-[#1877F2]/20 transition-colors"
             whileHover={{ scale: 1.1, y: -2 }}
             whileTap={{ scale: 0.95 }}
+            aria-label="Facebook"
           >
-            <Facebook className="w-5 h-5 text-secondary-foreground" />
+            <SiFacebook className="w-5 h-5 text-[#1877F2]" />
           </motion.a>
           <motion.a 
             href="#" 
-            className="p-3 bg-secondary-foreground/10 rounded-full hover:bg-primary/20 transition-colors"
+            className="p-3 bg-secondary-foreground/10 rounded-full hover:bg-[#E4405F]/20 transition-colors"
             whileHover={{ scale: 1.1, y: -2 }}
             whileTap={{ scale: 0.95 }}
+            aria-label="Instagram"
           >
-            <Instagram className="w-5 h-5 text-secondary-foreground" />
+            <SiInstagram className="w-5 h-5 text-[#E4405F]" />
+          </motion.a>
+          <motion.a 
+            href="https://wa.me/27828069569" 
+            className="p-3 bg-secondary-foreground/10 rounded-full hover:bg-[#25D366]/20 transition-colors"
+            whileHover={{ scale: 1.1, y: -2 }}
+            whileTap={{ scale: 0.95 }}
+            aria-label="WhatsApp"
+          >
+            <SiWhatsapp className="w-5 h-5 text-[#25D366]" />
           </motion.a>
           <motion.a 
             href="#" 
-            className="p-3 bg-secondary-foreground/10 rounded-full hover:bg-primary/20 transition-colors"
+            className="p-3 bg-secondary-foreground/10 rounded-full hover:bg-secondary-foreground/20 transition-colors"
             whileHover={{ scale: 1.1, y: -2 }}
             whileTap={{ scale: 0.95 }}
+            aria-label="TikTok"
           >
-            <MessageCircle className="w-5 h-5 text-secondary-foreground" />
+            <SiTiktok className="w-5 h-5 text-secondary-foreground" />
           </motion.a>
         </div>
 

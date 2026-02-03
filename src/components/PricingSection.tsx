@@ -18,7 +18,7 @@ const pricingTiers = [
   },
   {
     name: "Full Service",
-    price: "R180",
+    price: "R120",
     icon: Star,
     features: [
       "Everything in Quick Bubble",
@@ -31,7 +31,7 @@ const pricingTiers = [
   },
   {
     name: "Premium Detail",
-    price: "R280",
+    price: "R250",
     icon: Crown,
     features: [
       "Everything in Full Service",
