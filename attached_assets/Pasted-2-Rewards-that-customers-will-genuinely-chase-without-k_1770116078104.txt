@@ -1,0 +1,216 @@
+2) Rewards that customers will genuinely chase (without killing your margin)
+Key principle:
+
+Your rewards should be upgrade-heavy, not “cash-off heavy.”
+Upgrades feel valuable to customers, but cost you far less than giving away big discounts.
+
+Recommended reward ladder (mid/long-term)
+
+This is designed so customers look forward to the next milestone.
+
+Tier 1: Frequent small wins (keeps them engaged)
+
+250 points: Free tyre shine OR air freshener (low cost to you)
+
+400 points: Free interior wipe-down add-on
+
+Tier 2: “I’m getting close!” milestones (drives repeat)
+
+800 points: R30 off any wash OR free premium add-on
+
+Tier 3: The big reward (the goal customers chase)
+
+1,500 points: Free Basic Wash (or “free wash up to R80”)
+(This is the headline reward customers tell others about.)
+
+Tier 4 (optional): Premium retention
+
+3,000 points: Free Wash + Vacuum (or a “Deluxe upgrade”)
+
+Point expiry (important):
+
+Points expire after 90 days (keeps the cycle moving and limits liability)
+
+3) Real-world maths (designed to protect your profits)
+
+Let’s use realistic assumptions for Boksburg / East Rand mall traffic:
+
+Your pricing (example)
+
+Basic wash price: R80
+
+Wash + vacuum: R140
+
+Average ticket (blended): R140 (because many add vacuum/tyre shine)
+
+Your variable costs per car (typical hand wash)
+
+(These are approximate but realistic ranges)
+
+Chemicals + consumables: R10–R18
+
+Water/electricity per car: R4–R8
+
+Labour per car (depends on throughput): R20–R35
+Estimated variable cost per car: R34–R61
+
+So on a R140 average ticket:
+
+Gross margin before rent/admin could be roughly R79–R106 (depends on your operation)
+
+Now the rewards cost (what it really costs you)
+Upgrades (best for margin)
+
+Tyre shine / air freshener: cost to you ± R3–R8
+
+Interior wipe-down: ± R5–R12
+
+Controlled “cash-off”
+
+When you give R30 off, you’re not giving away R30 profit — you’re giving away revenue.
+If your variable cost is still covered, you’re typically sacrificing part of your margin, not the whole ticket.
+
+The “Free Basic Wash” risk (and how we control it)
+
+A free wash sounds expensive—unless it’s earned slowly and capped properly.
+
+At 1 point per R1 spent:
+
+Customer needs R1,500 spend in the mall to earn a free basic wash.
+
+That spend happens across tenants — which is exactly what the mall wants.
+
+Your “cost” of that reward:
+
+You’re giving away an R80 wash, but your real out-of-pocket is the variable cost (say ±R45 average).
+
+You can also structure it as “Free Basic Wash with any paid upgrade/add-on” (like R20 vacuum add-on or tyre shine), which offsets cost and increases average basket.
+
+✅ This makes the headline reward attractive but financially safe.
+
+4) The funding model (so discounts don’t come out of your pocket)
+
+To avoid your profits being “the sponsor,” you pitch shared funding:
+
+Recommended structure: “Split the reward cost”
+Tenant contribution (marketing fee)
+
+Participating tenants contribute a small amount when a reward is redeemed, e.g.:
+
+R10 per redemption (only when a customer redeems a reward)
+This is tiny compared to what they spend on marketing, and it’s performance-based.
+
+Your contribution
+
+You contribute the remainder through:
+
+low-cost upgrades
+
+limited R-off
+
+caps per day
+
+Mall benefit
+
+More spending
+
+Differentiation
+
+Foot traffic retention
+You can ask the mall to support with signage space / marketing placements.
+
+This model makes the program sustainable long-term.
+
+5) Controls that keep the program profitable (non-negotiable)
+
+These are the guardrails that make malls comfortable and protect you:
+
+Redemption limits
+
+Max 1 reward redemption per vehicle per day
+
+Max R30 discount per transaction (unless it’s the 1,500-point “free wash” reward)
+
+Booking benefits (pushes scheduling + reduces chaos)
+
+Booked customers can redeem plus get a priority slot
+(Improves flow and reduces idle time)
+
+Fraud prevention
+
+Points earned only from:
+
+QR scan linked to till receipt number, OR
+
+cashier entry with receipt reference
+
+High-value redemptions may require showing the receipt (optional)
+
+Expiry
+
+Points expire after 90 days (reduces long-term liability)
+
+Participation
+
+Tenants are opt-in and can be “selected stores only”
+
+You can start with 5–10 tenants as a pilot
+
+6) Why tenants will promote it (make it easy for them)
+
+You give each participating tenant:
+
+a counter QR stand (“Earn points for car wash rewards”)
+
+a short script for cashiers
+
+inclusion on your website / booking page (“Participating stores”)
+
+monthly report: how many customers earned/redeemed via them
+
+Tenants love programs that are:
+
+simple
+
+performance-based
+
+measurable
+
+7) Reporting & accountability (what malls want to see)
+
+Monthly reporting includes:
+
+number of participating tenants
+
+points issued vs points redeemed
+
+redemptions by tenant category (restaurants vs retail)
+
+peak redemption times
+
+estimated incremental mall spend influenced (proxy metric)
+
+customer repeat rate (re-booking rate)
+
+This turns your program into a mall analytics asset, not just a car wash promo.
+
+8) Pilot roll-out (makes it easy to approve)
+Phase 1 — 30-day pilot
+
+5–10 tenants
+
+1 bay operation
+
+reward ladder active
+
+signage in 2–3 key areas
+
+weekly check-ins with mall management
+
+Phase 2 — Scale to 3 months
+
+add more tenants
+
+add membership option (optional)
+
+adjust reward ladder based on redemption rates

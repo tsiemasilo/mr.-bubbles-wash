@@ -1,9 +1,10 @@
 import { motion } from "framer-motion";
-import { MapPin, Phone, Clock, FileDown, Leaf } from "lucide-react";
+import { MapPin, Phone, Clock, FileDown, Leaf, Handshake } from "lucide-react";
 import { SiFacebook, SiInstagram, SiWhatsapp, SiTiktok } from "react-icons/si";
 import { Button } from "@/components/ui/button";
 import { generateCompanyProfile } from "@/lib/generateCompanyProfile";
 import { generateEnvironmentalCompliance } from "@/lib/generateEnvironmentalCompliance";
+import { generateMallPartnership } from "@/lib/generateMallPartnership";
 
 const Footer = () => {
   return (
@@ -13,9 +14,8 @@ const Footer = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="max-w-md mx-auto"
+        className="max-w-xl mx-auto"
       >
-        {/* Brand */}
         <div className="text-center mb-8">
           <h3 className="text-2xl font-bold mb-2">
             Mr. Bubbles Bubbles
@@ -25,7 +25,6 @@ const Footer = () => {
           </p>
         </div>
 
-        {/* Contact Info */}
         <div className="space-y-4 mb-8">
           <motion.div 
             className="flex items-center gap-3 justify-center"
@@ -41,7 +40,7 @@ const Footer = () => {
             transition={{ duration: 0.2 }}
           >
             <Clock className="w-4 h-4 text-primary" />
-            <span className="text-sm text-secondary-foreground/80">Mon - Sat: 7:00 AM - 6:00 PM</span>
+            <span className="text-sm text-secondary-foreground/80">Mon - Sun: 9:00 AM - 5:00 PM</span>
           </motion.div>
           <motion.div 
             className="flex items-center gap-3 justify-center"
@@ -53,7 +52,6 @@ const Footer = () => {
           </motion.div>
         </div>
 
-        {/* Social Links */}
         <div className="flex justify-center gap-4 mb-8">
           <motion.a 
             href="#" 
@@ -93,37 +91,53 @@ const Footer = () => {
           </motion.a>
         </div>
 
-        {/* Document Downloads */}
-        <div className="flex flex-col sm:flex-row justify-center gap-3 mb-8">
-          <motion.div
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-          >
-            <Button
-              onClick={generateCompanyProfile}
-              className="gap-2 bg-primary text-primary-foreground hover:bg-primary/90 w-full sm:w-auto"
-              data-testid="button-download-profile"
+        <div className="mb-6">
+          <p className="text-xs text-secondary-foreground/60 text-center mb-4 font-medium uppercase tracking-wider">
+            Download Business Documents
+          </p>
+          <div className="flex flex-col sm:flex-row justify-center gap-3">
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
             >
-              <FileDown className="w-4 h-4" />
-              Business Proposal
-            </Button>
-          </motion.div>
-          <motion.div
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-          >
-            <Button
-              onClick={generateEnvironmentalCompliance}
-              className="gap-2 bg-emerald-600 text-white hover:bg-emerald-700 w-full sm:w-auto"
-              data-testid="button-download-environmental"
+              <Button
+                onClick={generateCompanyProfile}
+                className="gap-2 bg-primary text-primary-foreground hover:bg-primary/90 w-full sm:w-auto"
+                data-testid="button-download-profile"
+              >
+                <FileDown className="w-4 h-4" />
+                Business Proposal
+              </Button>
+            </motion.div>
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
             >
-              <Leaf className="w-4 h-4" />
-              Environmental Compliance
-            </Button>
-          </motion.div>
+              <Button
+                onClick={generateEnvironmentalCompliance}
+                className="gap-2 bg-emerald-600 text-white hover:bg-emerald-700 w-full sm:w-auto"
+                data-testid="button-download-environmental"
+              >
+                <Leaf className="w-4 h-4" />
+                Environmental
+              </Button>
+            </motion.div>
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              <Button
+                onClick={generateMallPartnership}
+                className="gap-2 bg-amber-600 text-white hover:bg-amber-700 w-full sm:w-auto"
+                data-testid="button-download-partnership"
+              >
+                <Handshake className="w-4 h-4" />
+                Mall Partnership
+              </Button>
+            </motion.div>
+          </div>
         </div>
 
-        {/* Divider */}
         <div className="border-t border-secondary-foreground/20 pt-6">
           <p className="text-xs text-secondary-foreground/50 text-center">
             © 2025 Mr. Bubbles Bubbles. All rights reserved.
