@@ -1,38 +1,57 @@
 import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Check, Star, Crown, Sparkles } from "lucide-react";
+import { Check, Star, Crown, Sparkles, Gem } from "lucide-react";
 
 const pricingTiers = [
   {
-    name: "Basic Bubble",
-    price: "R90",
+    name: "Quick Bubble",
+    price: "R80",
     icon: Sparkles,
-    features: ["Exterior Hand Wash", "Wheel Cleaning", "Window Cleaning"],
+    features: [
+      "Exterior Hand Wash & Dry",
+      "Wheel & Mag Cleaning",
+      "Window Cleaning",
+      "Tyre Shine",
+    ],
     popular: false,
   },
   {
-    name: "Super Shine",
-    price: "R120",
+    name: "Full Service",
+    price: "R180",
     icon: Star,
     features: [
-      "Everything in Basic",
+      "Everything in Quick Bubble",
       "Interior Vacuum",
-      "Dashboard Wipe",
+      "Dashboard & Console Wipe",
+      "Door Panels Clean",
       "Air Freshener",
     ],
     popular: true,
   },
   {
-    name: "Royal Bubble",
-    price: "R250",
+    name: "Premium Detail",
+    price: "R280",
     icon: Crown,
     features: [
-      "Everything in Super",
-      "Full Interior Detail",
-      "Tyre Shine",
-      "Wax Polish",
+      "Everything in Full Service",
+      "Leather/Seat Treatment",
+      "Carpet Deep Clean",
+      "High-Definition Wax Polish",
+      "Boot & Spare Wheel Clean",
+    ],
+    popular: false,
+  },
+  {
+    name: "Royal Treatment",
+    price: "R450",
+    icon: Gem,
+    features: [
+      "Everything in Premium Detail",
       "Engine Bay Clean",
+      "Machine Buff Polish",
+      "Interior Roof Clean",
+      "Full Exterior Hand Polish",
     ],
     popular: false,
   },
