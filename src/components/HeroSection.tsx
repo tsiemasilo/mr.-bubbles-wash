@@ -6,23 +6,22 @@ import logo from "@/assets/logo.png";
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center px-6 py-12 overflow-hidden">
-      {/* Logo with seamless background blend */}
+      {/* Logo - clean and seamless */}
       <motion.div
-        initial={{ scale: 0, opacity: 0, rotate: -10 }}
-        animate={{ scale: 1, opacity: 1, rotate: 0 }}
-        transition={{ duration: 1, type: "spring", stiffness: 100 }}
-        className="mb-4 relative"
+        initial={{ scale: 0.8, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 0.8, type: "spring", stiffness: 100 }}
+        className="mb-6 relative"
       >
-        {/* Glow effect behind logo */}
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/20 via-transparent to-transparent blur-3xl scale-150" />
+        {/* Soft ambient glow */}
+        <div className="absolute inset-0 bg-primary/10 blur-[80px] scale-[2] rounded-full" />
         
-        {/* Logo container with blend effect */}
         <motion.div
           animate={{ 
-            y: [0, -8, 0],
+            y: [0, -6, 0],
           }}
           transition={{ 
-            duration: 4, 
+            duration: 3.5, 
             repeat: Infinity, 
             ease: "easeInOut" 
           }}
@@ -31,23 +30,10 @@ const HeroSection = () => {
           <img
             src={logo}
             alt="Mr. Bubbles Bubbles Logo"
-            className="w-56 h-56 object-contain drop-shadow-2xl"
+            className="w-72 h-72 object-contain"
             style={{
-              filter: "drop-shadow(0 10px 30px rgba(0, 136, 204, 0.3))",
-            }}
-          />
-          
-          {/* Subtle shine effect */}
-          <motion.div
-            className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent rounded-full"
-            animate={{ 
-              opacity: [0.3, 0.6, 0.3],
-              rotate: [0, 5, 0]
-            }}
-            transition={{ 
-              duration: 3, 
-              repeat: Infinity, 
-              ease: "easeInOut" 
+              filter: "drop-shadow(0 8px 24px rgba(0, 136, 204, 0.2))",
+              mixBlendMode: "multiply",
             }}
           />
         </motion.div>
