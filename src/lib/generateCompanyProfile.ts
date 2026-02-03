@@ -386,8 +386,8 @@ export const generateCompanyProfile = () => {
   
   yPos += 3;
   yPos = drawSubHeader("Operating Hours", yPos);
-  yPos = drawBulletPoint("Mall trading hours including weekends", 25, yPos, pageWidth - 50);
-  yPos = drawBulletPoint("Monday - Saturday: 7:00 AM - 6:00 PM", 25, yPos, pageWidth - 50);
+  yPos = drawBulletPoint("7 days a week including weekends and public holidays", 25, yPos, pageWidth - 50);
+  yPos = drawBulletPoint("Monday - Sunday: 9:00 AM - 17:00 PM", 25, yPos, pageWidth - 50);
   
   yPos += 3;
   yPos = drawSubHeader("Equipment", yPos);
@@ -510,7 +510,7 @@ export const generateCompanyProfile = () => {
   
   yPos += 15;
   const monthlyCosts = [
-    ["Staff wages", "R25,000 - R40,000"],
+    ["Staff wages", "R15,000 - R25,000"],
     ["Rent / revenue share", "R10,000 - R20,000"],
     ["Water & electricity", "R3,000 - R6,000"],
     ["Cleaning supplies", "R3,000 - R5,000"],
@@ -535,7 +535,7 @@ export const generateCompanyProfile = () => {
   doc.setTextColor(255, 255, 255);
   doc.setFont("helvetica", "bold");
   doc.text("Total Monthly Costs", 30, yPos + 5);
-  doc.text("R43,000 - R75,000", pageWidth - 55, yPos + 5);
+  doc.text("R33,000 - R60,000", pageWidth - 55, yPos + 5);
 
   // ===== PAGE 9: FINANCIAL PROJECTIONS - PART 2 =====
   doc.addPage();
@@ -612,9 +612,9 @@ export const generateCompanyProfile = () => {
   
   yPos += 15;
   const profits = [
-    ["Conservative", "R97,500", "R60,000", "R37,500"],
-    ["Moderate", "R136,500", "R65,000", "R71,500"],
-    ["Strong", "R187,200", "R75,000", "R112,200"],
+    ["Conservative", "R97,500", "R45,000", "R52,500"],
+    ["Moderate", "R136,500", "R50,000", "R86,500"],
+    ["Strong", "R187,200", "R55,000", "R132,200"],
   ];
   
   profits.forEach(([scenario, rev, cost, profit], i) => {
