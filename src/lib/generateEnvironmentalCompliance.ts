@@ -15,8 +15,8 @@ export const generateEnvironmentalCompliance = () => {
     doc.setDrawColor(14, 116, 144);
     doc.setFillColor(14, 116, 144);
     const bubbles = [
-      { x: 15, y: 35, r: 10 }, { x: 195, y: 40, r: 12 },
-      { x: 20, y: 280, r: 8 }, { x: 190, y: 275, r: 10 },
+      { x: 15, y: 35, r: 8 }, { x: 195, y: 40, r: 10 },
+      { x: 20, y: 280, r: 6 }, { x: 190, y: 275, r: 8 },
     ];
     doc.setGState(doc.GState({ opacity: 0.08 }));
     bubbles.forEach(b => doc.circle(b.x, b.y, b.r, "F"));
@@ -25,29 +25,29 @@ export const generateEnvironmentalCompliance = () => {
 
   const drawCheckItem = (text: string, x: number, yPos: number, maxWidth: number): number => {
     doc.setTextColor(...greenColor);
-    doc.setFontSize(11);
+    doc.setFontSize(10);
     doc.text("\u2713", x, yPos);
     doc.setTextColor(...grayColor);
     doc.setFont("helvetica", "normal");
-    doc.setFontSize(11);
-    const lines = doc.splitTextToSize(text, maxWidth - 10);
-    doc.text(lines, x + 7, yPos);
-    return yPos + (lines.length * 5.5) + 2;
+    doc.setFontSize(10);
+    const lines = doc.splitTextToSize(text, maxWidth - 8);
+    doc.text(lines, x + 6, yPos);
+    return yPos + (lines.length * 4.5) + 1.5;
   };
 
   const drawSectionBox = (title: string, items: string[], x: number, yPos: number, width: number, bgColor: [number, number, number]): number => {
-    const itemHeight = items.length * 7 + 16;
+    const itemHeight = items.length * 6 + 13;
     doc.setFillColor(...bgColor);
     doc.roundedRect(x, yPos, width, itemHeight, 2, 2, "F");
     
     doc.setTextColor(...primaryColor);
-    doc.setFontSize(12);
+    doc.setFontSize(11);
     doc.setFont("helvetica", "bold");
-    doc.text(title, x + 5, yPos + 8);
+    doc.text(title, x + 4, yPos + 7);
     
-    let itemY = yPos + 16;
+    let itemY = yPos + 13;
     items.forEach(item => {
-      itemY = drawCheckItem(item, x + 5, itemY, width - 10);
+      itemY = drawCheckItem(item, x + 4, itemY, width - 8);
     });
     
     return itemHeight;
@@ -56,55 +56,55 @@ export const generateEnvironmentalCompliance = () => {
   drawBubbles();
 
   doc.setFillColor(...primaryColor);
-  doc.rect(0, 0, pageWidth, 32, "F");
+  doc.rect(0, 0, pageWidth, 28, "F");
   
   doc.setTextColor(255, 255, 255);
-  doc.setFontSize(20);
+  doc.setFontSize(18);
   doc.setFont("helvetica", "bold");
-  doc.text("ENVIRONMENTAL COMPLIANCE STATEMENT", pageWidth / 2, 16, { align: "center" });
+  doc.text("ENVIRONMENTAL COMPLIANCE STATEMENT", pageWidth / 2, 14, { align: "center" });
   
-  doc.setFontSize(12);
+  doc.setFontSize(11);
   doc.setFont("helvetica", "normal");
-  doc.text("Mr. Bubbles Bubbles - Premium Car Wash", pageWidth / 2, 26, { align: "center" });
+  doc.text("Mr. Bubbles Bubbles - Premium Car Wash", pageWidth / 2, 23, { align: "center" });
   
   doc.setFillColor(...accentColor);
-  doc.rect(0, 32, pageWidth, 3, "F");
+  doc.rect(0, 28, pageWidth, 2, "F");
 
-  let yPos = 44;
+  let yPos = 36;
   
   doc.setFillColor(240, 253, 244);
-  doc.roundedRect(15, yPos, pageWidth - 30, 22, 3, 3, "F");
+  doc.roundedRect(15, yPos, pageWidth - 30, 18, 3, 3, "F");
   doc.setTextColor(...greenColor);
-  doc.setFontSize(13);
+  doc.setFontSize(11);
   doc.setFont("helvetica", "bold");
-  doc.text("Commitment Statement", 20, yPos + 9);
+  doc.text("Commitment Statement", 20, yPos + 7);
   doc.setFont("helvetica", "normal");
   doc.setTextColor(...grayColor);
-  doc.setFontSize(11);
+  doc.setFontSize(10);
   const commitment = "Mr. Bubbles Bubbles commits to operating a fully compliant, environmentally responsible outdoor car wash service in line with mall policies and municipal bylaws.";
   const commitLines = doc.splitTextToSize(commitment, pageWidth - 44);
-  doc.text(commitLines, 20, yPos + 17);
+  doc.text(commitLines, 20, yPos + 13);
 
-  yPos = 74;
-  const colWidth = (pageWidth - 40) / 2;
+  yPos = 58;
+  const colWidth = (pageWidth - 38) / 2;
   
   const waterItems = [
     "Average usage: ~70 L per vehicle",
     "High-pressure, low-flow equipment",
     "No continuous hose flow",
-    "Water usage logs available on request",
+    "Water usage logs on request",
   ];
   const h1 = drawSectionBox("Water Management", waterItems, 15, yPos, colWidth, [240, 249, 255]);
   
   const wastewaterItems = [
-    "All wash water captured on mats",
+    "Wash water captured on mats",
     "Portable oil-water separator",
     "Approved sewer connection only",
     "No stormwater contamination",
   ];
-  const h2 = drawSectionBox("Wastewater Control", wastewaterItems, 20 + colWidth, yPos, colWidth, [240, 249, 255]);
+  const h2 = drawSectionBox("Wastewater Control", wastewaterItems, 19 + colWidth, yPos, colWidth, [240, 249, 255]);
   
-  yPos += Math.max(h1, h2) + 6;
+  yPos += Math.max(h1, h2) + 4;
   
   const oilItems = [
     "1,000 L oil-water separator",
@@ -120,9 +120,9 @@ export const generateEnvironmentalCompliance = () => {
     "MSDS sheets available",
     "Staff trained on chemicals",
   ];
-  const h4 = drawSectionBox("Chemicals", chemItems, 20 + colWidth, yPos, colWidth, [255, 247, 237]);
+  const h4 = drawSectionBox("Chemicals", chemItems, 19 + colWidth, yPos, colWidth, [255, 247, 237]);
   
-  yPos += Math.max(h3, h4) + 6;
+  yPos += Math.max(h3, h4) + 4;
   
   const infraItems = [
     "No excavation required",
@@ -138,9 +138,9 @@ export const generateEnvironmentalCompliance = () => {
     "Staff PPE and safety training",
     "Fire extinguisher on site",
   ];
-  const h6 = drawSectionBox("Noise & Safety", noiseItems, 20 + colWidth, yPos, colWidth, [248, 250, 252]);
+  const h6 = drawSectionBox("Noise & Safety", noiseItems, 19 + colWidth, yPos, colWidth, [248, 250, 252]);
   
-  yPos += Math.max(h5, h6) + 6;
+  yPos += Math.max(h5, h6) + 4;
   
   const insuranceItems = [
     "Public liability insurance in place",
@@ -148,46 +148,46 @@ export const generateEnvironmentalCompliance = () => {
     "Emergency response procedures",
     "Incident reporting protocols",
   ];
-  drawSectionBox("Insurance & Risk", insuranceItems, 15, yPos, pageWidth - 30, [240, 253, 244]);
+  const insHeight = drawSectionBox("Insurance & Risk", insuranceItems, 15, yPos, pageWidth - 30, [240, 253, 244]);
   
-  yPos += 42;
+  yPos += insHeight + 4;
   
   doc.setFillColor(...primaryColor);
-  doc.roundedRect(15, yPos, pageWidth - 30, 32, 3, 3, "F");
+  doc.roundedRect(15, yPos, pageWidth - 30, 26, 3, 3, "F");
   doc.setTextColor(255, 255, 255);
-  doc.setFontSize(12);
+  doc.setFontSize(11);
   doc.setFont("helvetica", "bold");
-  doc.text("Key Compliance Statement:", 20, yPos + 10);
+  doc.text("Key Compliance Statement:", 20, yPos + 8);
   doc.setFont("helvetica", "normal");
-  doc.setFontSize(10);
+  doc.setFontSize(9);
   const keyStatement = '"All wastewater generated on site will be captured, processed through a 1,000-litre oil-water separator, and discharged only into an approved sewer connection, with no discharge into stormwater systems."';
   const keyLines = doc.splitTextToSize(keyStatement, pageWidth - 44);
-  doc.text(keyLines, 20, yPos + 18);
+  doc.text(keyLines, 20, yPos + 15);
 
-  yPos += 40;
+  yPos += 30;
   
   doc.setFillColor(248, 250, 252);
-  doc.roundedRect(15, yPos, pageWidth - 30, 26, 3, 3, "F");
+  doc.roundedRect(15, yPos, pageWidth - 30, 20, 3, 3, "F");
   doc.setTextColor(...darkColor);
-  doc.setFontSize(12);
+  doc.setFontSize(11);
   doc.setFont("helvetica", "bold");
-  doc.text("Conclusion:", 20, yPos + 9);
+  doc.text("Conclusion:", 20, yPos + 7);
   doc.setFont("helvetica", "normal");
   doc.setTextColor(...grayColor);
-  doc.setFontSize(11);
+  doc.setFontSize(9);
   const conclusion = "The proposed outdoor car wash operation poses minimal environmental risk, complies with mall operational standards, and protects all drainage and infrastructure systems.";
   const conclusionLines = doc.splitTextToSize(conclusion, pageWidth - 44);
-  doc.text(conclusionLines, 20, yPos + 17);
+  doc.text(conclusionLines, 20, yPos + 14);
 
   doc.setFillColor(...accentColor);
-  doc.rect(0, pageHeight - 22, pageWidth, 22, "F");
+  doc.rect(0, pageHeight - 18, pageWidth, 18, "F");
   doc.setTextColor(255, 255, 255);
-  doc.setFontSize(11);
+  doc.setFontSize(10);
   doc.setFont("helvetica", "bold");
-  doc.text("Mr. Bubbles Bubbles", 20, pageHeight - 10);
+  doc.text("Mr. Bubbles Bubbles", 20, pageHeight - 8);
   doc.setFont("helvetica", "normal");
-  doc.text("|  Phone: 082 806 9569  |  Boksburg Center, Gauteng", 68, pageHeight - 10);
-  doc.text("February 2025", pageWidth - 38, pageHeight - 10);
+  doc.text("|  082 806 9569  |  Boksburg Center, Gauteng", 65, pageHeight - 8);
+  doc.text("February 2025", pageWidth - 35, pageHeight - 8);
 
   doc.save("Mr_Bubbles_Environmental_Compliance.pdf");
 };
