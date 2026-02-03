@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Droplets, Gift, DollarSign, Phone, Home, FileText, Leaf } from "lucide-react";
+import { Droplets, Gift, DollarSign, Phone, Home, FileText, Leaf, Handshake } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { generateCompanyProfile } from "@/lib/generateCompanyProfile";
 import { generateEnvironmentalCompliance } from "@/lib/generateEnvironmentalCompliance";
+import { generateMallPartnership } from "@/lib/generateMallPartnership";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,6 +19,7 @@ const Navbar = () => {
   const pdfItems = [
     { name: "Business Proposal", icon: FileText, action: generateCompanyProfile },
     { name: "Environmental Compliance", icon: Leaf, action: generateEnvironmentalCompliance },
+    { name: "Mall Partnership", icon: Handshake, action: generateMallPartnership },
   ];
 
   const scrollToSection = (href: string) => {
