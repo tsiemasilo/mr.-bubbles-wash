@@ -1,19 +1,28 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Sparkles } from "lucide-react";
 import logo from "@/assets/logo.png";
+import BookingModal from "./BookingModal";
 
 const HeroSection = () => {
+  const [isBookingOpen, setIsBookingOpen] = useState(false);
+
+  const scrollToPricing = () => {
+    const element = document.querySelector("#pricing");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center px-6 py-12 overflow-hidden">
-      {/* Logo - clean and seamless */}
       <motion.div
         initial={{ scale: 0.8, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.8, type: "spring", stiffness: 100 }}
         className="mb-6 relative"
       >
-        {/* Soft ambient glow */}
         <div className="absolute inset-0 bg-primary/10 blur-[80px] scale-[2] rounded-full" />
         
         <motion.div
@@ -45,7 +54,7 @@ const HeroSection = () => {
         transition={{ delay: 0.5, duration: 0.6 }}
         className="text-lg text-muted-foreground text-center mb-8 max-w-xs"
       >
-        Where your car gets the royal bubble treatment ✨
+        Where your car gets the royal bubble treatment
       </motion.p>
 
       <motion.div
@@ -61,6 +70,8 @@ const HeroSection = () => {
           <Button 
             size="lg" 
             className="w-full text-lg gap-2 py-6 bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary shadow-lg hover:shadow-xl transition-all duration-300 font-bold"
+            onClick={() => setIsBookingOpen(true)}
+            data-testid="button-book-wash"
           >
             <Sparkles className="w-5 h-5" />
             Book a Wash
@@ -75,6 +86,8 @@ const HeroSection = () => {
             variant="outline" 
             size="lg" 
             className="w-full text-lg py-6 border-2 border-primary/40 hover:border-primary hover:bg-primary/10 transition-all duration-300 font-semibold backdrop-blur-sm"
+            onClick={scrollToPricing}
+            data-testid="button-view-prices"
           >
             View Prices
           </Button>
@@ -102,6 +115,8 @@ const HeroSection = () => {
           </motion.span>
         </motion.div>
       </motion.div>
+
+      <BookingModal isOpen={isBookingOpen} onClose={() => setIsBookingOpen(false)} />
     </section>
   );
 };

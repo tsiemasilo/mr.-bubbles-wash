@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Droplets, MapPin, Gift, DollarSign, Phone, Home, FileText, Leaf } from "lucide-react";
+import { Droplets, Gift, DollarSign, Phone, Home, FileText, Leaf } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { generateCompanyProfile } from "@/lib/generateCompanyProfile";
 import { generateEnvironmentalCompliance } from "@/lib/generateEnvironmentalCompliance";
@@ -9,10 +9,10 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { name: "Home", href: "#home", icon: Home, type: "scroll" },
-    { name: "Prices", href: "#pricing", icon: DollarSign, type: "scroll" },
-    { name: "Rewards", href: "#rewards", icon: Gift, type: "scroll" },
-    { name: "Contact", href: "#contact", icon: Phone, type: "scroll" },
+    { name: "Home", href: "#home", icon: Home },
+    { name: "Prices", href: "#pricing", icon: DollarSign },
+    { name: "Rewards", href: "#rewards", icon: Gift },
+    { name: "Contact", href: "#contact", icon: Phone },
   ];
 
   const pdfItems = [
@@ -35,11 +35,11 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-primary">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <motion.a
             href="#home"
-            className="flex items-center gap-3"
+            className="flex items-center gap-3 shrink-0"
             whileHover={{ scale: 1.02 }}
             onClick={(e) => {
               e.preventDefault();
@@ -48,38 +48,39 @@ const Navbar = () => {
             data-testid="link-logo"
           >
             <Droplets className="w-10 h-10 text-white" />
-            <span className="font-bold text-xl text-white">Mr. Bubbles Bubbles</span>
+            <span className="font-bold text-xl text-white whitespace-nowrap">Mr. Bubbles Bubbles</span>
           </motion.a>
 
-          <div className="hidden lg:flex items-center gap-2">
+          <div className="hidden lg:flex items-center gap-1 ml-auto">
             {navItems.map((item) => (
               <Button
                 key={item.name}
                 variant="ghost"
-                className="text-white/90 hover:text-white hover:bg-white/10 text-base px-4"
+                className="text-white/90 hover:text-white hover:bg-white/10 text-base px-4 h-10"
                 onClick={() => scrollToSection(item.href)}
                 data-testid={`link-nav-${item.name.toLowerCase()}`}
               >
                 {item.name}
               </Button>
             ))}
-            <div className="w-px h-6 bg-white/30 mx-2" />
+            <div className="w-px h-6 bg-white/30 mx-3" />
             {pdfItems.map((item) => (
               <Button
                 key={item.name}
                 variant="ghost"
-                className="text-white/90 hover:text-white hover:bg-white/10 text-base px-4 gap-2"
+                className="text-white/90 hover:text-white hover:bg-white/10 text-sm px-3 h-10 gap-2"
                 onClick={() => handlePdfDownload(item.action)}
                 data-testid={`link-nav-${item.name.toLowerCase().replace(/\s+/g, '-')}`}
               >
                 <item.icon className="w-4 h-4" />
-                {item.name}
+                <span className="hidden xl:inline">{item.name}</span>
+                <span className="xl:hidden">{item.name.split(' ')[0]}</span>
               </Button>
             ))}
           </div>
 
           <label 
-            className="lg:hidden cursor-pointer z-50"
+            className="lg:hidden cursor-pointer z-50 ml-auto"
             data-testid="button-menu-toggle"
           >
             <input 
