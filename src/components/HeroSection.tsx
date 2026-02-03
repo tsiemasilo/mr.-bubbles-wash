@@ -30,7 +30,7 @@ const HeroSection = () => {
           <img
             src={logo}
             alt="Mr. Bubbles Bubbles Logo"
-            className="w-72 h-72 object-contain"
+            className="w-80 h-80 md:w-96 md:h-96 object-contain"
             style={{
               filter: "drop-shadow(0 8px 24px rgba(0, 136, 204, 0.2))",
               mixBlendMode: "multiply",
