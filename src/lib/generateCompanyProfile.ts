@@ -31,68 +31,68 @@ export const generateCompanyProfile = () => {
 
   const drawPageHeader = (title: string, pageNum: number) => {
     doc.setFillColor(...primaryColor);
-    doc.rect(0, 0, pageWidth, 25, "F");
+    doc.rect(0, 0, pageWidth, 28, "F");
     doc.setTextColor(255, 255, 255);
-    doc.setFontSize(14);
+    doc.setFontSize(16);
     doc.setFont("helvetica", "bold");
-    doc.text(title, 20, 16);
-    doc.setFontSize(10);
+    doc.text(title, 20, 18);
+    doc.setFontSize(12);
     doc.setFont("helvetica", "normal");
-    doc.text(`Page ${pageNum}`, pageWidth - 25, 16);
+    doc.text(`Page ${pageNum}`, pageWidth - 28, 18);
     doc.setFillColor(...accentColor);
-    doc.rect(0, 25, pageWidth, 2, "F");
+    doc.rect(0, 28, pageWidth, 3, "F");
   };
 
   const drawSectionHeader = (title: string, yPos: number, number?: string): number => {
     doc.setFillColor(240, 249, 255);
-    doc.roundedRect(15, yPos - 6, pageWidth - 30, 14, 2, 2, "F");
+    doc.roundedRect(15, yPos - 7, pageWidth - 30, 16, 2, 2, "F");
     doc.setFillColor(...primaryColor);
-    doc.roundedRect(15, yPos - 6, 4, 14, 1, 1, "F");
+    doc.roundedRect(15, yPos - 7, 5, 16, 1, 1, "F");
     doc.setTextColor(...primaryColor);
-    doc.setFontSize(14);
+    doc.setFontSize(16);
     doc.setFont("helvetica", "bold");
     const headerText = number ? `${number}. ${title}` : title;
-    doc.text(headerText, 25, yPos + 3);
-    return yPos + 18;
+    doc.text(headerText, 26, yPos + 4);
+    return yPos + 20;
   };
 
   const drawSubHeader = (title: string, yPos: number): number => {
     doc.setTextColor(...darkColor);
-    doc.setFontSize(11);
+    doc.setFontSize(13);
     doc.setFont("helvetica", "bold");
     doc.text(title, 25, yPos);
-    return yPos + 8;
+    return yPos + 9;
   };
 
   const drawBulletPoint = (text: string, x: number, yPos: number, maxWidth: number): number => {
     doc.setFillColor(...accentColor);
-    doc.circle(x + 2, yPos - 1.5, 1.5, "F");
+    doc.circle(x + 2, yPos - 2, 2, "F");
     doc.setTextColor(...grayColor);
-    doc.setFontSize(10);
+    doc.setFontSize(12);
     doc.setFont("helvetica", "normal");
-    const lines = doc.splitTextToSize(text, maxWidth - 10);
-    doc.text(lines, x + 8, yPos);
-    return yPos + (lines.length * 5) + 2;
+    const lines = doc.splitTextToSize(text, maxWidth - 12);
+    doc.text(lines, x + 10, yPos);
+    return yPos + (lines.length * 6) + 2.5;
   };
 
   const drawCheckmark = (text: string, x: number, yPos: number, maxWidth: number): number => {
     doc.setTextColor(...greenColor);
-    doc.setFontSize(10);
+    doc.setFontSize(12);
     doc.text("\u2713", x + 2, yPos);
     doc.setTextColor(...grayColor);
     doc.setFont("helvetica", "normal");
-    const lines = doc.splitTextToSize(text, maxWidth - 10);
-    doc.text(lines, x + 10, yPos);
-    return yPos + (lines.length * 5) + 2;
+    const lines = doc.splitTextToSize(text, maxWidth - 12);
+    doc.text(lines, x + 12, yPos);
+    return yPos + (lines.length * 6) + 2.5;
   };
 
   const drawParagraph = (text: string, x: number, yPos: number, maxWidth: number): number => {
     doc.setTextColor(...grayColor);
-    doc.setFontSize(10);
+    doc.setFontSize(12);
     doc.setFont("helvetica", "normal");
     const lines = doc.splitTextToSize(text, maxWidth);
     doc.text(lines, x, yPos);
-    return yPos + (lines.length * 5) + 3;
+    return yPos + (lines.length * 6) + 4;
   };
 
   // ===== PAGE 1: COVER PAGE =====
@@ -113,36 +113,36 @@ export const generateCompanyProfile = () => {
   doc.roundedRect(35, 65, pageWidth - 70, 110, 5, 5, "F");
   
   doc.setTextColor(...primaryColor);
-  doc.setFontSize(28);
+  doc.setFontSize(32);
   doc.setFont("helvetica", "bold");
   doc.text("Mr. Bubbles Bubbles", pageWidth / 2, 95, { align: "center" });
   
-  doc.setFontSize(13);
+  doc.setFontSize(15);
   doc.setFont("helvetica", "normal");
   doc.setTextColor(...grayColor);
-  doc.text("Premium Car Wash Experience", pageWidth / 2, 108, { align: "center" });
+  doc.text("Premium Car Wash Experience", pageWidth / 2, 110, { align: "center" });
   
   doc.setFillColor(...accentColor);
-  doc.rect(60, 118, pageWidth - 120, 1, "F");
+  doc.rect(60, 120, pageWidth - 120, 2, "F");
   
-  doc.setFontSize(16);
+  doc.setFontSize(20);
   doc.setFont("helvetica", "bold");
   doc.setTextColor(...darkColor);
-  doc.text("BUSINESS PROPOSAL", pageWidth / 2, 138, { align: "center" });
+  doc.text("BUSINESS PROPOSAL", pageWidth / 2, 140, { align: "center" });
   
-  doc.setFontSize(11);
+  doc.setFontSize(14);
   doc.setFont("helvetica", "normal");
   doc.setTextColor(...grayColor);
-  doc.text("Car Wash & Valet Services", pageWidth / 2, 150, { align: "center" });
-  doc.text("Mall & Commercial Location Approval", pageWidth / 2, 160, { align: "center" });
+  doc.text("Car Wash & Valet Services", pageWidth / 2, 154, { align: "center" });
+  doc.text("Mall & Commercial Location Approval", pageWidth / 2, 166, { align: "center" });
   
   doc.setTextColor(255, 255, 255);
-  doc.setFontSize(11);
+  doc.setFontSize(14);
   doc.text("Boksburg Center, Gauteng", pageWidth / 2, 215, { align: "center" });
-  doc.text("Phone: 082 806 9569", pageWidth / 2, 225, { align: "center" });
-  doc.text("www.mrbubbles.co.za", pageWidth / 2, 235, { align: "center" });
+  doc.text("Phone: 082 806 9569", pageWidth / 2, 228, { align: "center" });
+  doc.text("www.mrbubbles.co.za", pageWidth / 2, 241, { align: "center" });
   
-  doc.setFontSize(10);
+  doc.setFontSize(12);
   doc.text("February 2025", pageWidth / 2, 265, { align: "center" });
 
   // ===== PAGE 2: TABLE OF CONTENTS =====
@@ -150,15 +150,15 @@ export const generateCompanyProfile = () => {
   drawBubbles(0.06);
   drawPageHeader("Mr. Bubbles Bubbles - Business Proposal", 2);
   
-  let yPos = 45;
+  let yPos = 48;
   doc.setTextColor(...darkColor);
-  doc.setFontSize(22);
+  doc.setFontSize(26);
   doc.setFont("helvetica", "bold");
   doc.text("Table of Contents", pageWidth / 2, yPos, { align: "center" });
   doc.setFillColor(...accentColor);
-  doc.rect(70, yPos + 5, pageWidth - 140, 1, "F");
+  doc.rect(70, yPos + 6, pageWidth - 140, 2, "F");
   
-  yPos = 68;
+  yPos = 72;
   const tocItems = [
     { num: "1", title: "Executive Summary", page: "3" },
     { num: "2", title: "Business Overview & Value Proposition", page: "3" },
@@ -177,20 +177,20 @@ export const generateCompanyProfile = () => {
   
   tocItems.forEach((item) => {
     doc.setFillColor(248, 250, 252);
-    doc.roundedRect(25, yPos - 5, pageWidth - 50, 11, 2, 2, "F");
+    doc.roundedRect(25, yPos - 5, pageWidth - 50, 13, 2, 2, "F");
     doc.setTextColor(...primaryColor);
-    doc.setFontSize(10);
+    doc.setFontSize(12);
     doc.setFont("helvetica", "bold");
-    doc.text(`${item.num}.`, 30, yPos + 2);
+    doc.text(`${item.num}.`, 30, yPos + 3);
     doc.setTextColor(...darkColor);
     doc.setFont("helvetica", "normal");
-    doc.text(item.title, 42, yPos + 2);
+    doc.text(item.title, 44, yPos + 3);
     doc.setTextColor(...lightGray);
-    doc.text(".".repeat(45), 105, yPos + 2);
+    doc.text(".".repeat(40), 110, yPos + 3);
     doc.setTextColor(...primaryColor);
     doc.setFont("helvetica", "bold");
-    doc.text(item.page, pageWidth - 30, yPos + 2);
-    yPos += 14;
+    doc.text(item.page, pageWidth - 32, yPos + 3);
+    yPos += 15;
   });
 
   // ===== PAGE 3: EXECUTIVE SUMMARY & BUSINESS OVERVIEW =====
