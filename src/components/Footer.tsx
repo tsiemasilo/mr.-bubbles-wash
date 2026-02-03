@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
-import { MapPin, Phone, Clock, FileDown } from "lucide-react";
+import { MapPin, Phone, Clock, FileDown, Leaf } from "lucide-react";
 import { SiFacebook, SiInstagram, SiWhatsapp, SiTiktok } from "react-icons/si";
 import { Button } from "@/components/ui/button";
 import { generateCompanyProfile } from "@/lib/generateCompanyProfile";
+import { generateEnvironmentalCompliance } from "@/lib/generateEnvironmentalCompliance";
 
 const Footer = () => {
   return (
@@ -92,20 +93,32 @@ const Footer = () => {
           </motion.a>
         </div>
 
-        {/* Company Profile Download */}
-        <div className="flex justify-center mb-8">
+        {/* Document Downloads */}
+        <div className="flex flex-col sm:flex-row justify-center gap-3 mb-8">
           <motion.div
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
             <Button
-              variant="outline"
               onClick={generateCompanyProfile}
-              className="gap-2 border-primary/30 hover:border-primary hover:bg-primary/10"
+              className="gap-2 bg-primary text-primary-foreground hover:bg-primary/90 w-full sm:w-auto"
               data-testid="button-download-profile"
             >
               <FileDown className="w-4 h-4" />
-              Download Company Profile
+              Business Proposal
+            </Button>
+          </motion.div>
+          <motion.div
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+          >
+            <Button
+              onClick={generateEnvironmentalCompliance}
+              className="gap-2 bg-emerald-600 text-white hover:bg-emerald-700 w-full sm:w-auto"
+              data-testid="button-download-environmental"
+            >
+              <Leaf className="w-4 h-4" />
+              Environmental Compliance
             </Button>
           </motion.div>
         </div>
